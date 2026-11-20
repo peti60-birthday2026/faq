@@ -173,14 +173,14 @@
         <p>Es gibt drei Teile:</p>
         <ul>
           <li><b>Wunschliste</b>: Gäste tragen Songwünsche ein, du siehst sie in der Admin-Ansicht, und die Jetzt-läuft-Anzeige zeigt, wer sich den laufenden Song gewünscht hat.</li>
-          <li><b>Party-Spiele</b> (Ordner <code>spiele</code>): Quiz, Buzzer, Abstimmungen, Grüße-Wand, Glücksrad, Timer und Druckvorlagen.</li>
-          <li><b>Lightshow</b> (Ordner <code>tools-main</code>): Musik-Visualisierung für den Beamer mit Handy-Fernbedienung.</li>
+          <li><b>Party-Spiele</b> (Ordner <code>abend</code>): Quiz, Buzzer, Abstimmungen, Grüße-Wand, Glücksrad, Timer und Druckvorlagen.</li>
+          <li><b>Lightshow</b> (Ordner <code>tools</code>): Musik-Visualisierung für den Beamer mit Handy-Fernbedienung.</li>
         </ul>
       </div></details>
 
       <details><summary>Muss das online sein? Reicht es, die Dateien zu öffnen?</summary><div class="a">
         <p>Es muss online sein, z. B. über GitHub Pages. Als lokal geöffnete Datei funktionieren QR-Codes, Spotify und teils auch die Verbindung nicht.</p>
-        <p>Wichtig ist, dass die Ordnerstruktur gleich bleibt: <code>wunsch-sync.js</code> muss neben <code>playlist.html</code>, <code>admin.html</code> und <code>anzeige.html</code> liegen, und der Ordner <code>spiele</code> darunter.</p>
+        <p>Wichtig ist, dass die vier Ordner <code>wunschliste</code>, <code>abend</code>, <code>tools</code> und <code>faq</code> nebeneinander liegen, z. B. als vier Repos beim selben GitHub-Konto (<code>DEIN-NAME.github.io/wunschliste/</code>, <code>…/abend/</code>, <code>…/tools/</code>, <code>…/faq/</code>). Die Seiten verlinken sich gegenseitig, und die Regie lädt <code>wunsch-sync.js</code> aus dem Ordner <code>wunschliste</code>.</p>
       </div></details>
 
       <details><summary>Brauchen alle Geräte Internet?</summary><div class="a">
@@ -193,15 +193,15 @@
       </div></details>
 
       <details><summary>Wie lautet der Code für Admin und Regie, und wie ändere ich ihn?</summary><div class="a">
-        <p>Der Code ist <code>1234</code>. Ändern kannst du ihn in <code>admin.html</code> und <code>spiele/regie.html</code> bei <code>const ADMIN_CODE = '1234';</code>.</p>
+        <p>Der Code ist <code>1234</code>. Ändern kannst du ihn in <code>wunschliste/admin.html</code> und <code>abend/regie.html</code> bei <code>const ADMIN_CODE = '1234';</code>.</p>
         <div class="note warn">Der Code ist nur ein Sichtschutz. Wer sich mit Webseiten auskennt, kann ihn im Quelltext nachlesen. Für eine private Party reicht das.</div>
       </div></details>
 
       <details><summary>Wie ändere ich „Peti“ oder „Peti wird 60“?</summary><div class="a">
         <ul>
           <li><b>Spiele</b>: Regie → Einstellungen.</li>
-          <li><b>Jetzt läuft</b>: in <code>anzeige.html</code> bei <code>PARTY_TITLE</code> und <code>BIRTHDAY_NAME</code>.</li>
-          <li><b>Wunschliste</b>: die Texte stehen direkt in <code>index.html</code> und <code>playlist.html</code>.</li>
+          <li><b>Jetzt läuft</b>: in <code>wunschliste/anzeige.html</code> bei <code>PARTY_TITLE</code> und <code>BIRTHDAY_NAME</code>.</li>
+          <li><b>Wunschliste</b>: die Texte stehen direkt in <code>wunschliste/index.html</code> und <code>wunschliste/playlist.html</code>.</li>
         </ul>
       </div></details>
 
@@ -217,8 +217,8 @@
     <!-- ===================== STARTSEITE ===================== -->
     <section class="page" id="start" data-title="Startseite">
       <div class="phead">
-        <div><h2>🏠 Startseite</h2><div class="file">index.html</div><span class="who">für alle</span></div>
-        <a class="open" href="index.html">Seite öffnen ↗</a>
+        <div><h2>🏠 Startseite</h2><div class="file">wunschliste/index.html</div><span class="who">für alle</span></div>
+        <a class="open" href="../wunschliste/">Seite öffnen ↗</a>
       </div>
       <p class="intro">Der Einstieg mit Buttons zu allen Bereichen.</p>
       <details><summary>Welchen Link schicke ich den Gästen?</summary><div class="a">
@@ -229,16 +229,18 @@
           <li><b>Song eintragen</b> → Wunschliste für Gäste</li>
           <li><b>Admin-Ansicht</b> → alle Wünsche (mit Code)</li>
           <li><b>Jetzt-läuft-Anzeige</b> → für Beamer oder Fernseher</li>
-          <li><b>Party-Spiele</b> → Spiele-Bereich</li>
+          <li><b>Party-Spiele</b> → Spiele-Bereich (Ordner <code>abend</code>)</li>
+          <li><b>Hilfe &amp; FAQ</b> → diese Seite</li>
         </ul>
+        <p>Dazu gibt es <code>faq/uebersicht.html</code> als Übersicht über alle vier Bereiche, auch mit der Lightshow.</p>
       </div></details>
     </section>
 
     <!-- ===================== PLAYLIST ===================== -->
     <section class="page" id="playlist" data-title="Song eintragen">
       <div class="phead">
-        <div><h2>🎶 Song eintragen</h2><div class="file">playlist.html</div><span class="who">für Gäste</span></div>
-        <a class="open" href="playlist.html">Seite öffnen ↗</a>
+        <div><h2>🎶 Song eintragen</h2><div class="file">wunschliste/playlist.html</div><span class="who">für Gäste</span></div>
+        <a class="open" href="../wunschliste/playlist.html">Seite öffnen ↗</a>
       </div>
       <p class="intro">Hier tragen Gäste ihre Songwünsche ein.</p>
       <details><summary>Wie trage ich einen Song ein?</summary><div class="a">
@@ -269,8 +271,8 @@
     <!-- ===================== ADMIN ===================== -->
     <section class="page" id="admin" data-title="Admin-Ansicht">
       <div class="phead">
-        <div><h2>🎂 Admin-Ansicht</h2><div class="file">admin.html</div><span class="who">nur Gastgeber · Code 1234</span></div>
-        <a class="open" href="admin.html">Seite öffnen ↗</a>
+        <div><h2>🎂 Admin-Ansicht</h2><div class="file">wunschliste/admin.html</div><span class="who">nur Gastgeber · Code 1234</span></div>
+        <a class="open" href="../wunschliste/admin.html">Seite öffnen ↗</a>
       </div>
       <p class="intro">Übersicht aller Wünsche, sortiert nach Gästen.</p>
       <details><summary>Was sehe ich hier?</summary><div class="a">
@@ -297,8 +299,8 @@
     <!-- ===================== ANZEIGE ===================== -->
     <section class="page" id="anzeige" data-title="Jetzt läuft">
       <div class="phead">
-        <div><h2>📺 Jetzt läuft</h2><div class="file">anzeige.html</div><span class="who">Beamer / Fernseher</span></div>
-        <a class="open" href="anzeige.html">Seite öffnen ↗</a>
+        <div><h2>📺 Jetzt läuft</h2><div class="file">wunschliste/anzeige.html</div><span class="who">Beamer / Fernseher</span></div>
+        <a class="open" href="../wunschliste/anzeige.html">Seite öffnen ↗</a>
       </div>
       <p class="intro">Zeigt groß den aktuellen Spotify-Song mit Cover und wer ihn sich gewünscht hat.</p>
       <details><summary>Wie verbinde ich Spotify? (einmalig)</summary><div class="a">
@@ -332,8 +334,8 @@
     <!-- ===================== SPIELE START ===================== -->
     <section class="page" id="spiele" data-title="Spiele-Start">
       <div class="phead">
-        <div><h2>🎲 Spiele-Start</h2><div class="file">spiele/index.html</div><span class="who">für alle</span></div>
-        <a class="open" href="spiele/">Seite öffnen ↗</a>
+        <div><h2>🎲 Spiele-Start</h2><div class="file">abend/index.html</div><span class="who">für alle</span></div>
+        <a class="open" href="../abend/">Seite öffnen ↗</a>
       </div>
       <p class="intro">Wegweiser zu den vier Spiele-Seiten.</p>
       <details><summary>Wie hängen die Spiele-Seiten zusammen?</summary><div class="a">
@@ -361,8 +363,8 @@
     <!-- ===================== MITSPIELEN ===================== -->
     <section class="page" id="mitspielen" data-title="Mitspielen">
       <div class="phead">
-        <div><h2>📱 Mitspielen</h2><div class="file">spiele/mitspielen.html</div><span class="who">für Gäste</span></div>
-        <a class="open" href="spiele/mitspielen.html">Seite öffnen ↗</a>
+        <div><h2>📱 Mitspielen</h2><div class="file">abend/mitspielen.html</div><span class="who">für Gäste</span></div>
+        <a class="open" href="../abend/mitspielen.html">Seite öffnen ↗</a>
       </div>
       <p class="intro">Das Handy wird zum Spielgerät. Was angezeigt wird, bestimmt die Regie.</p>
       <details><summary>Wie mache ich mit?</summary><div class="a"><p>QR-Code auf dem Beamer oder dem Aushang scannen, Namen eintragen, „Los geht's“. Wer schon auf der Wunschliste war, hat seinen Namen bereits vorausgefüllt.</p></div></details>
@@ -385,8 +387,8 @@
     <!-- ===================== BEAMER ===================== -->
     <section class="page" id="beamer" data-title="Beamer">
       <div class="phead">
-        <div><h2>📺 Spiele-Beamer</h2><div class="file">spiele/beamer.html</div><span class="who">Laptop am Beamer</span></div>
-        <a class="open" href="spiele/beamer.html">Seite öffnen ↗</a>
+        <div><h2>📺 Spiele-Beamer</h2><div class="file">abend/beamer.html</div><span class="who">Laptop am Beamer</span></div>
+        <a class="open" href="../abend/beamer.html">Seite öffnen ↗</a>
       </div>
       <p class="intro">Zeigt groß, was die Regie gerade auswählt, mit Konfetti und Tönen.</p>
       <details><summary>Wie richte ich den Beamer ein?</summary><div class="a">
@@ -403,8 +405,8 @@
     <!-- ===================== REGIE ===================== -->
     <section class="page" id="regie" data-title="Regie">
       <div class="phead">
-        <div><h2>🎛️ Regie</h2><div class="file">spiele/regie.html</div><span class="who">nur Spielleitung · Code 1234</span></div>
-        <a class="open" href="spiele/regie.html">Seite öffnen ↗</a>
+        <div><h2>🎛️ Regie</h2><div class="file">abend/regie.html</div><span class="who">nur Spielleitung · Code 1234</span></div>
+        <a class="open" href="../abend/regie.html">Seite öffnen ↗</a>
       </div>
       <p class="intro">Die Fernbedienung für alle Spiele. Oben siehst du, was der Beamer gerade zeigt und wie viele mitspielen.</p>
 
@@ -470,8 +472,8 @@
     <!-- ===================== DRUCKEN ===================== -->
     <section class="page" id="drucken" data-title="Druckvorlagen">
       <div class="phead">
-        <div><h2>🖨️ Druckvorlagen</h2><div class="file">spiele/drucken.html</div><span class="who">vor der Party</span></div>
-        <a class="open" href="spiele/drucken.html">Seite öffnen ↗</a>
+        <div><h2>🖨️ Druckvorlagen</h2><div class="file">abend/drucken.html</div><span class="who">vor der Party</span></div>
+        <a class="open" href="../abend/drucken.html">Seite öffnen ↗</a>
       </div>
       <p class="intro">Alles zum Ausdrucken für die Spiele ohne Handy.</p>
       <details><summary>Wie drucke ich richtig?</summary><div class="a">
@@ -499,12 +501,12 @@
     <!-- ===================== LIGHTSHOW ===================== -->
     <section class="page" id="lightshow" data-title="Lightshow">
       <div class="phead">
-        <div><h2>✨ Lightshow</h2><div class="file">tools-main/index.html · ls.html · remote.html</div><span class="who">Laptop am Beamer + Handy</span></div>
-        <span class="open off">Eigener Ordner</span>
+        <div><h2>✨ Lightshow</h2><div class="file">tools/index.html · ls.html · remote.html</div><span class="who">Laptop am Beamer + Handy</span></div>
+        <a class="open" href="../tools/">Seite öffnen ↗</a>
       </div>
-      <p class="intro">Bunte Musik-Visualisierung mit 20 Effekten, die auf die Musik reagiert. Liegt im separaten Ordner <code>tools-main</code>.</p>
+      <p class="intro">Bunte Musik-Visualisierung mit 20 Effekten, die auf die Musik reagiert. Liegt im Ordner <code>tools</code>.</p>
       <details><summary>Wie starte ich die Lightshow?</summary><div class="a">
-        <ol><li><code>tools-main/index.html</code> öffnen.</li><li>Ably-Key und einen Raum-Code (z. B. <code>geburtstag</code>) eintragen.</li><li>„Show starten“ auf dem Laptop, „Fernbedienungs-Link kopieren“ und auf dem Handy öffnen.</li></ol>
+        <ol><li><code>tools/index.html</code> öffnen.</li><li>Ably-Key und einen Raum-Code (z. B. <code>geburtstag</code>) eintragen.</li><li>„Show starten“ auf dem Laptop, „Fernbedienungs-Link kopieren“ und auf dem Handy öffnen.</li></ol>
         <p>Ohne Key läuft die Show auch, nur ohne Handy-Steuerung.</p>
       </div></details>
       <details><summary>Woher bekommt die Show die Musik?</summary><div class="a">
