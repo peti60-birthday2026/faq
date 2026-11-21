@@ -99,6 +99,8 @@
   .tools{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
   .tools button{ border:1px solid var(--line); background:rgba(255,255,255,0.04); color:var(--muted); border-radius:9px; padding:6px 11px; font:inherit; font-size:0.8rem; cursor:pointer; }
   .tools button:hover{ color:var(--text); }
+  .tools a.back{ border:1px solid var(--line); border-radius:9px; padding:6px 11px; font-size:0.8rem; color:var(--muted); text-decoration:none; }
+  .tools a.back:hover{ color:var(--text); }
 </style>
 </head>
 <body>
@@ -116,6 +118,7 @@
     <div class="tools">
       <button id="openAll">Alle Antworten aufklappen</button>
       <button id="closeAll">Alle zuklappen</button>
+      <a class="back" href="uebersicht.html">🏠 Alle Bereiche</a>
     </div>
   </header>
 
@@ -180,7 +183,7 @@
 
       <details><summary>Muss das online sein? Reicht es, die Dateien zu öffnen?</summary><div class="a">
         <p>Es muss online sein, z. B. über GitHub Pages. Als lokal geöffnete Datei funktionieren QR-Codes, Spotify und teils auch die Verbindung nicht.</p>
-        <p>Wichtig ist, dass die vier Ordner <code>wunschliste</code>, <code>abend</code>, <code>tools</code> und <code>faq</code> nebeneinander liegen, z. B. als vier Repos beim selben GitHub-Konto (<code>DEIN-NAME.github.io/wunschliste/</code>, <code>…/abend/</code>, <code>…/tools/</code>, <code>…/faq/</code>). Die Seiten verlinken sich gegenseitig, und die Regie lädt <code>wunsch-sync.js</code> aus dem Ordner <code>wunschliste</code>.</p>
+        <p>Wichtig ist, dass die vier Ordner <code>wunschliste</code>, <code>abend</code>, <code>tools</code> und <code>faq</code> nebeneinander liegen, z. B. als vier Repos beim selben GitHub-Konto (<code>peti60-birthday2026.github.io/wunschliste/</code>, <code>…/abend/</code>, <code>…/tools/</code>, <code>…/faq/</code>). Die Seiten verlinken sich gegenseitig, und die Regie lädt <code>wunsch-sync.js</code> aus dem Ordner <code>wunschliste</code>.</p>
       </div></details>
 
       <details><summary>Brauchen alle Geräte Internet?</summary><div class="a">
@@ -312,7 +315,7 @@
         <p>Die Client ID ist bereits eingetragen. Danach bleibt die Anzeige verbunden, auch nach dem Neuladen.</p>
       </div></details>
       <details><summary>Welche Redirect URI muss ich eintragen?</summary><div class="a">
-        <p>Genau die Adresse, unter der <code>anzeige.html</code> online liegt, z. B. <code>https://DEIN-NAME.github.io/wunschliste/anzeige.html</code>. Zeichen für Zeichen gleich, ohne <code>?</code> oder <code>#</code> dahinter. Spotify erlaubt nur <code>https://</code> oder <code>http://127.0.0.1</code>, nicht „localhost“.</p>
+        <p>Genau die Adresse, unter der <code>anzeige.html</code> online liegt, z. B. <code>https://peti60-birthday2026.github.io/wunschliste/anzeige.html</code>. Zeichen für Zeichen gleich, ohne <code>?</code> oder <code>#</code> dahinter. Spotify erlaubt nur <code>https://</code> oder <code>http://127.0.0.1</code>, nicht „localhost“.</p>
       </div></details>
       <details><summary>Brauche ich Spotify Premium?</summary><div class="a">
         <p>Laut mehreren Berichten verlangt Spotify seit Anfang 2026 Premium beim Besitzer der Entwickler-App. Mit einem Free-Konto kann die Verbindung deshalb scheitern.</p>
